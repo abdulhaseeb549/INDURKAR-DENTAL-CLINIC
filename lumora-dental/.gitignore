@@ -1,0 +1,10 @@
+# Impeccable working files (large mockups, raw plates, screenshots) stay local
+.impeccable/mocks/
+.impeccable/plates/
+.impeccable/review/
+.impeccable/design-assets/
+.impeccable/design-canvas-remote/
+.impeccable/build/
+.impeccable/questions/
+.impeccable/layout-options.jpg
+.impeccable/config.local.json
