@@ -217,7 +217,6 @@ td, th {
 
 html {
   height: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -225,7 +224,6 @@ body {
   background-color: #fff;
   min-height: 100%;
   margin: 0;
-  overflow-x: hidden;
   font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -4158,7 +4156,7 @@ figure {
 
 .hero_overlay {
   background-image: linear-gradient(180deg, var(--primitive-color--transparent) 6%, var(--color-shadow--black-45) 49%, var(--color-shadow--dark-80));
-  width: 100vw;
+  width: 100%;
   min-height: 328px;
   position: absolute;
 }
@@ -4211,7 +4209,7 @@ figure {
 }
 
 .our-story_item {
-  width: 410px;
+  width: 100%;
   height: var(--_max-width---max-width--100);
   min-height: 480px;
   max-height: 480px;
@@ -4328,10 +4326,17 @@ figure {
 .service_wrap {
   display: flex;
   container-type: inline-size;
+  overflow: hidden;
 }
 
 .section_team, .section_team.is-home {
   background-color: var(--primitive-color--neutral-300);
+}
+
+.section_testimonial,
+.section_cta {
+  overflow: clip;
+  contain: paint;
 }
 
 .home-team_header {
@@ -6469,12 +6474,13 @@ figure {
   width: var(--_max-width---max-width--100);
   background-color: var(--primitive-color--transparent);
   height: auto;
+  overflow: hidden;
 }
 
 .story-slider_mask {
-  width: 410px;
+  width: 100%;
   height: var(--_max-width---max-width--100);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .story-slider_slide {
@@ -9101,6 +9107,10 @@ figure {
     overflow: hidden;
   }
 
+  .navbar_menu {
+    overflow: visible;
+  }
+
   .service_list {
     width: 100%;
     display: flex;
@@ -9205,3 +9215,33 @@ footer{border-top:3px solid var(--primitive-color--primary-500,#24a3b1);}
 
 /* Safety: reveal/portrait/blog images must never stay blurred (no leftover IX2 blur) */
 .team_image,.blog-item_image,.our-story_image,.about-hero_image,.home-value_image{filter:none !important;-webkit-filter:none !important;}
+
+/* PreDent logo badge (real card artwork on a white plate): nav + footer sizing */
+.navbar_logo { width: auto; max-width: none; }
+.navbar_logo .logo_image { height: 58px; width: auto; }
+.footer_brand { max-width: none; }
+.footer_brand .brand_logo { height: 92px; width: auto; }
+@media screen and (max-width: 991px) {
+  .navbar_logo { max-width: none; }
+  .navbar_logo .logo_image { height: 44px; }
+  .footer_brand .brand_logo { height: 68px; }
+}
+
+/* PreDent location block (about page): one real clinic + map */
+.pd-location { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: stretch; padding-bottom: 120px; }
+.pd-location_card { background: #fff; border-radius: 24px; padding: 36px; box-shadow: 0 20px 50px rgba(1, 31, 35, .08); display: flex; flex-direction: column; gap: 14px; }
+.pd-location_title { font-size: 26px; line-height: 1.2; font-weight: 600; color: var(--primitive-color--primary-900); }
+.pd-location_text { margin: 0; font-size: 16px; line-height: 1.6; color: #3c4b4d; }
+.pd-location_text a { color: var(--primitive-color--primary-500); text-decoration: none; }
+.pd-location_actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 8px; }
+.pd-btn { display: inline-block; padding: 14px 24px; border-radius: 999px; background: var(--primitive-color--primary-900); color: #fff; font-weight: 600; text-decoration: none; transition: transform .25s, background .25s; }
+.pd-btn:hover { transform: translateY(-2px); background: var(--primitive-color--primary-500); }
+.pd-btn.is-ghost { background: transparent; color: var(--primitive-color--primary-900); box-shadow: inset 0 0 0 1.5px var(--primitive-color--primary-900); }
+.pd-btn.is-ghost:hover { color: #fff; background: var(--primitive-color--primary-900); }
+.pd-location_map { border-radius: 24px; overflow: hidden; min-height: 380px; box-shadow: 0 20px 50px rgba(1, 31, 35, .08); }
+.pd-location_map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+@media screen and (max-width: 767px) {
+  .pd-location { grid-template-columns: 1fr; padding-bottom: 72px; }
+  .pd-location_card { padding: 24px; }
+  .pd-location_title { font-size: 22px; }
+}
