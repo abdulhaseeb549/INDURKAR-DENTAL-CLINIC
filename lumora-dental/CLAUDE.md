@@ -114,3 +114,9 @@ is a CSS variant and is fine to keep.)
 
 ## Team section background (14 Jun 2026)
 - `.section_team` now uses `gen_team-bg.jpg` (clinic + window plants) under a cyan/teal overlay (blue on variant). Header text (`.home-team_header-title/-para`, `.section_tag`) forced white; `.text-highlighted` lightened. Doctor name plates stay dark. CSS cache-bust `?v=20260614d`.
+
+## Clinic details swap: PreDent (28 Oct 2026)
+- Site details now come from the Google Business listing for **PreDent Superspeciality Dental Clinic**, Nanded (replaces the Indurkar details).
+- Phone/WhatsApp `+91 83904 26787` (`tel:+918390426787`, `wa.me/918390426787`). Address: Bhagya Nagar Road, in front of Aainath Paavbhaji Centre, Peer Burhan Nagar, Nanded, Maharashtra 431605. Hours: Mon-Fri 11:00-20:00, Sat 11:00-19:00 (Sunday not listed).
+- Short brand in logo/footer/headings is "PreDent Dental Clinic" (logo SVG text is uppercase); the full name is used in `<title>` and meta descriptions.
+- Testimonials are now three real Google review excerpts (anonymous "Google Review"). Team section (`about.html`) still has template doctor names.
